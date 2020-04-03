@@ -1,68 +1,40 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Zavrsni-projekat
 
-## Available Scripts
+## Opis
 
-In the project directory, you can run:
+Potrebno je realizovati React aplikaciju koja demonstrira vaše znanje. Aplikacija mora da se ponaša responzivno, i da funkcioniše na različitim platformama(telefonu, tabletu, računaru). Zato dizajn aplikacije je potrebno napraviti da bude responzivan. 
 
-### `npm start`
+## Obavezne funkcionalnosti
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Aplikacija poseduje niz obaveznih funkcionalnosti:
+* Postoji forma za registrovanje. Podaci koje je potrebno uneti su:
+  * Ime
+  * Prezime
+  * Korisnicko ime (Username)
+  * Mejl adresa (Email)
+  * Sifra (Confirm Password)
+  * Ponovljena Sifa(Confirm Password)
+  * Sve sem ponovljene šifre se šalje serveru.
+* Postoji forma za login. Podaci koje je potrebno uneti su:
+  * Korisnik se loguje pomocu korisnickog imena i sifre.
+* Provera ulogovanosti (Korisniku koji nije ulogovan zabraniti pristup odredjenim stranicama/rutama)
+* Logovanje i Registracija moraju biti realizovani kroz komunikaciju sa serverom.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Slobodne funkcionalnosti
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Aplikacija prikazuje recepte sa različitih sajtova i naziv joj je Food for ReBoot.
+* Prva strana koju korisnik vidi poseduje slider sa fotografijama u skladu sa aplikacijom. Na istoj stranici se nalazi i Login forma.
+  * Ukoliko korisnik nije registrovan, može otići na link za kreiranje naloga. Klikom na link se odlazi na stranicu za registraciju, a takođe i tu postoji link koji vraća na Login formu.
+  * Svi fajlovi vezani za ove dve rute koje svako može videti nalaze se u folderu "public" koji je u okviru foldera "layout". 
+  * Dokumentacija za Login i registraciju se nalazi u folderu "services"
+* Registrovani i ulogovani korisnici mogu pristupiti glavnoj stranici gde su izlistani popularni recepti. 
+  * Podaci koji su vidljivi samo ulogovanim korisnicima smešteni su u fajlovima koji se nalaze u folderu "private" takođe u okviru "layout" foldera. Unutar njega se nalazi i folder "Recepti" koji je vezan samo za funkcije koje se odnose na recepte.
+* Na vrhu stranice postoji input polje koje omogućava pretragu recepata po nazivu ili glavnom sastojku.
+* Ispod input polja, postoje dva select polje koje omogućava filtriranje prikazanih recepata prema dijetetskim i zdravstvenim oznakama.   * Ponuđene opcije se razlikuju u zavisnosti od izlistanih recepata u tom momentu. 
+  * Međusobno su povezani tako da predstavljaju duplo filtriranje.
+* Klikom na sliku recepta, otvara se originalni izvor recepta.
+* Svaki recept ima dugme "Show ingredients". Klikom na dugme prikazuje se lista potrebnih sastojaka, a tekst dugmeta se menja u "Hide ingredients". Drugim klikom na dugme, sastojci ponovo postaju sakriveni, a tekst dugmeta se vraća na prvobitno stanje.
+* Kada se scroll traka pokrene ka dnu stranice, pojavljuje se dugme u vidu strelice koje omogućava vraćanje na početak stranice.
+* Pri samom vrhu sa leve strane postoji i sličica koja ujedno predstavlja i logo stranice. Klikom na nju se prikazuju podaci o ulogovanom korisniku. Drugim klikom se podaci skrivaju.
+* Ispod nje je dugme "Sign out" za odjavu pomoću kojeg se korisnik odjavljuje sa stranice i vraća na početnu stranu na kojoj je i Login.
+  * Nakon odjave korisnik ne može pristupiti podacima koji su privatni.
